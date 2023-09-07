@@ -1,4 +1,4 @@
-# CCS_23_OARS_STATEFUL_ATTACKS
+# 	[ACM CCS 2023] Stateful Defenses for Machine Learning Models Are Not Yet Secure Against Black-box Attacks
 
 Hello!
 
