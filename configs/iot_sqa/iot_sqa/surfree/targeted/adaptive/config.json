@@ -1,0 +1,45 @@
+{
+    "model_config": {
+    "threshold": 0.21320530425012113,
+    "add_cache_hit": true,
+    "reset_cache_on_hit": false,
+    "aggregation": "average",
+    "num_to_average": 11,
+    "action": "rejection",
+    "precision": null,
+    "state": {
+      "type": "iot_sqa"
+    },
+    "architecture": "iot_sqa",
+    "dataset": "iot_sqa"
+  },
+  "attack_config": {
+    "attack": "SurFree",
+    "targeted": true,
+    "num_images": 500,
+    "max_iter": 9999999,
+    "eps": 0.2,
+    "theta_max": 30,
+    "bs_gamma": 0.01,
+    "bs_max_iter": 10,
+    "freq_range": [
+      0,
+      0.5
+    ],
+    "n_ortho": 100,
+    "rho": 0.98,
+    "eval_per_direction": 1,
+    "budget": 100000,
+    "adaptive": {
+      "query_blinding_transform": null,
+      "bs_boundary_end_on_hit": false,
+      "step_max_attempts": 5,
+      "bs_min_angle": true,
+      "bs_min_angle_steps": 10,
+      "bs_min_angle_sample_size": 20,
+      "bs_min_angle_hit_rate": 0.05,
+      "bs_min_angle_upper": 50,
+      "bs_min_angle_lower": 1
+    }
+  }
+}

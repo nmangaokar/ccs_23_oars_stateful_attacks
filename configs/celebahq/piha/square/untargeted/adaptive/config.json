@@ -1,0 +1,47 @@
+{
+  "model_config": {
+    "threshold": 0.05,
+    "add_cache_hit": true,
+    "reset_cache_on_hit": false,
+    "aggregation": "closest",
+    "action": "rejection",
+    "precision": null,
+    "state": {
+      "type": "PIHA",
+      "block_size": 7,
+      "input_shape": [
+        3,
+        256,
+        256
+      ]
+    },
+    "architecture": "celebahq",
+    "dataset": "celebahq"
+  },
+  "attack_config": {
+    "attack": "Square",
+    "targeted": false,
+    "num_images": 100,
+    "max_iter": 10000,
+    "p_init": 0.05,
+    "eps": 0.05,
+    "budget": 1000,
+    "start_idx": 0,
+    "adaptive": {
+      "query_blinding_transform": null,
+      "bs_num_squares": true,
+      "bs_num_squares_lower": 50,
+      "bs_num_squares_upper": 100,
+      "bs_num_squares_steps": 3,
+      "bs_num_squares_sample_size": 5,
+      "bs_num_squares_hit_rate": 0,
+      "max_step_attempts": 300,
+      "bs_min_square_size": true,
+      "bs_min_square_size_lower": 1,
+      "bs_min_square_size_upper": 100,
+      "bs_min_square_size_steps": 10,
+      "bs_min_square_size_sample_size": 10,
+      "bs_min_square_size_hit_rate": 0.5
+    }
+  }
+}

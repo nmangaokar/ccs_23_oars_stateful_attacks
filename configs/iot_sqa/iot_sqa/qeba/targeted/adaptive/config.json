@@ -1,0 +1,45 @@
+{
+  "model_config": {
+    "threshold": 0.21320530425012113,
+    "add_cache_hit": true,
+    "reset_cache_on_hit": false,
+    "aggregation": "average",
+    "num_to_average": 11,
+    "action": "rejection",
+    "precision": null,
+    "state": {
+      "type": "iot_sqa"
+    },
+    "architecture": "iot_sqa",
+    "dataset": "iot_sqa"
+  },
+  "attack_config": {
+    "attack": "QEBA",
+    "targeted": true,
+    "max_iter": 99999999,
+    "eps": 0.2,
+    "max_num_dirs": 10000,
+    "num_dirs": 100,
+    "dim_reduction_factor": 4,
+    "budget": 100000,
+    "adaptive": {
+      "query_blinding_transform": null,
+      "bs_boundary_end_on_hit": false,
+      "grad_max_attempts": 1,
+      "bs_grad_var": true,
+      "bs_grad_var_steps": 20,
+      "bs_grad_var_sample_size": 20,
+      "bs_grad_var_hit_rate": 0.05,
+      "bs_grad_var_upper": 20,
+      "bs_grad_var_lower": 0.001,
+      "grad_est_accept_partial": true,
+      "step_max_attempts": 5,
+      "bs_min_ss": true,
+      "bs_min_ss_steps": 20,
+      "bs_min_ss_sample_size": 20,
+      "bs_min_ss_hit_rate": 0.05,
+      "bs_min_ss_upper": 1,
+      "bs_min_ss_lower": 0.00005
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "model_config": {
+    "threshold": 0.50,
+    "add_cache_hit": true,
+    "reset_cache_on_hit": false,
+    "aggregation": "closest",
+    "action": "rejection",
+    "precision": null,
+    "state": {
+      "type": "blacklight",
+      "window_size": 50,
+      "num_hashes_keep": 50,
+      "round": 50,
+      "step_size": 25,
+      "num_processes": 5,
+      "input_shape": [
+        3,
+        224,
+        224
+      ],
+      "salt": true
+    },
+    "architecture": "resnet152",
+    "dataset": "imagenet"
+  },
+  "attack_config": {
+    "attack": "Square",
+    "targeted": false,
+    "max_iter": 10000,
+    "p_init": 0.05,
+    "eps": 0.05,
+    "budget": 100000,
+    "adaptive": {
+      "query_blinding_transform": null,
+      "bs_num_squares": false,
+      "bs_num_squares_lower": 10,
+      "bs_num_squares_upper": 100,
+      "bs_num_squares_steps": 10,
+      "bs_num_squares_sample_size": 5,
+      "bs_num_squares_hit_rate": 0,
+      "max_step_attempts": 1,
+      "bs_min_square_size": false,
+      "bs_min_square_size_lower": 1,
+      "bs_min_square_size_upper": 32,
+      "bs_min_square_size_steps": 10,
+      "bs_min_square_size_sample_size": 10,
+      "bs_min_square_size_hit_rate": 0.5
+    }
+  }
+}

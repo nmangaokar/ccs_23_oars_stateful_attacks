@@ -1,0 +1,48 @@
+{
+  "model_config": {
+    "threshold": 0.21320530425012113,
+    "add_cache_hit": true,
+    "reset_cache_on_hit": false,
+    "aggregation": "average",
+    "num_to_average": 11,
+    "action": "rejection",
+    "precision": null,
+    "state": {
+      "type": "iot_sqa"
+    },
+    "architecture": "iot_sqa",
+    "dataset": "iot_sqa"
+  },
+  "attack_config": {
+    "attack": "NESScore",
+    "targeted": true,
+    "max_iter": 99999999,
+    "eps": 0.2,
+    "num_dirs": 50,
+    "var": 0.001,
+    "step_size": 0.01,
+    "min_step_size": 0.00005,
+    "momentum": 0.9,
+    "plateau_length": 5,
+    "plateau_drop": 2,
+    "budget": 100000,
+    "adaptive": {
+      "query_blinding_transform": null,
+      "grad_max_attempts": 1,
+      "bs_grad_var": false,
+      "bs_grad_var_steps": 10,
+      "bs_grad_var_sample_size": 20,
+      "bs_grad_var_hit_rate": 0.1,
+      "bs_grad_var_upper": 0.5,
+      "bs_grad_var_lower": 0.00001,
+      "grad_est_accept_partial": false,
+      "step_max_attempts": 1,
+      "bs_min_ss": false,
+      "bs_min_ss_steps": 10,
+      "bs_min_ss_sample_size": 20,
+      "bs_min_ss_hit_rate": 0.05,
+      "bs_min_ss_upper": 1,
+      "bs_min_ss_lower": 0.00005
+    }
+  }
+}

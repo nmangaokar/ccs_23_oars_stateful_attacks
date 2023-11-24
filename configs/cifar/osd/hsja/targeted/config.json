@@ -1,0 +1,50 @@
+{
+  "model_config": {
+    "threshold": 1.44,
+    "add_cache_hit": true,
+    "reset_cache_on_hit": true,
+    "aggregation": "average",
+    "num_to_average": 50,
+    "action": "rejection_silent",
+    "state": {
+      "type": "OSD",
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "salt": false,
+      "encoder_path": "models/pretrained/osd_cifar_encoder.pth"
+    },
+    "architecture": "resnet20",
+    "dataset": "cifar10"
+  },
+  "attack_config": {
+    "attack": "HSJA",
+    "targeted": true,
+    "max_iter": 99999999,
+    "eps": 0.05,
+    "num_dirs": 100,
+    "max_num_dirs": 10000,
+    "budget": 100000,
+    "adaptive": {
+      "query_blinding_transform": null,
+      "bs_boundary_end_on_hit": true,
+      "grad_max_attempts": 1,
+      "bs_grad_var": false,
+      "bs_grad_var_steps": 20,
+      "bs_grad_var_sample_size": 20,
+      "bs_grad_var_hit_rate": 0.05,
+      "bs_grad_var_upper": 5,
+      "bs_grad_var_lower": 0.001,
+      "grad_est_accept_partial": false,
+      "step_max_attempts": 1,
+      "bs_min_ss": false,
+      "bs_min_ss_steps": 20,
+      "bs_min_ss_sample_size": 20,
+      "bs_min_ss_hit_rate": 0.05,
+      "bs_min_ss_upper": 1,
+      "bs_min_ss_lower": 0.00005
+    }
+  }
+}

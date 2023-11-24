@@ -1,0 +1,44 @@
+{
+  "model_config": {
+    "threshold": 0.05,
+    "add_cache_hit": true,
+    "reset_cache_on_hit": false,
+    "aggregation": "closest",
+    "action": "rejection",
+    "precision": null,
+    "state": {
+      "type": "PIHA",
+      "block_size": 7,
+      "input_shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    "architecture": "resnet152",
+    "dataset": "imagenet"
+  },
+  "attack_config": {
+    "attack": "QEBA",
+    "targeted": true,
+    "max_iter": 99999999,
+    "eps": 0.05,
+    "max_num_dirs": 10000,
+    "num_dirs": 100,
+    "dim_reduction_factor": 4,
+    "budget": 100000,
+    "adaptive": {
+      "query_blinding_transform": null,
+      "bs_boundary_end_on_hit": false,
+      "grad_max_attempts": 20,
+      "bs_grad_var": true,
+      "bs_grad_var_steps": 10,
+      "bs_grad_var_sample_size": 20,
+      "bs_grad_var_hit_rate": 0.05,
+      "bs_grad_var_upper": 5,
+      "bs_grad_var_lower": 1.5,
+      "grad_est_accept_partial": true,
+      "step_max_attempts": 5
+    }
+  }
+}

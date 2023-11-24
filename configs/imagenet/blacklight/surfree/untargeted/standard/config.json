@@ -1,0 +1,57 @@
+{
+  "model_config": {
+    "threshold": 0.50,
+    "add_cache_hit": true,
+    "reset_cache_on_hit": false,
+    "aggregation": "closest",
+    "action": "rejection",
+    "precision": null,
+    "state": {
+      "type": "blacklight",
+      "window_size": 50,
+      "num_hashes_keep": 50,
+      "round": 50,
+      "step_size": 25,
+      "num_processes": 5,
+      "input_shape": [
+        3,
+        224,
+        224
+      ],
+      "salt": true
+    },
+    "architecture": "resnet152",
+    "dataset": "imagenet"
+  },
+  "attack_config": {
+    "attack": "SurFree",
+    "targeted": false,
+    "num_images": 500,
+    "max_iter": 9999999,
+    "eps": 0.05,
+    "theta_max": 30,
+    "bs_gamma": 0.01,
+    "bs_max_iter": 10,
+    "freq_range": [
+      0,
+      0.5
+    ],
+    "n_ortho": 100,
+    "rho": 0.98,
+    "eval_per_direction": 1,
+    "budget": 100000,
+    "adaptive": {
+      "num_accounts": 1,
+      "queries_per_account": 1,
+      "query_blinding_transform": null,
+      "bs_boundary_end_on_hit": true,
+      "step_max_attempts": 1,
+      "bs_min_angle": false,
+      "bs_min_angle_steps": 5,
+      "bs_min_angle_sample_size": 20,
+      "bs_min_angle_hit_rate": 0.05,
+      "bs_min_angle_upper": 50,
+      "bs_min_angle_lower": 5
+    }
+  }
+}
